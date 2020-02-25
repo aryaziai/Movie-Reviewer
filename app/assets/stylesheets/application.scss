@@ -48,8 +48,8 @@ main input[type="submit" i] {
   font-size: 86%;
   padding-left: 25px !important;
   padding-right: 25px !important;
+  cursor: pointer;
 }
-
 main input[type="submit" i]:hover {
   background-color: #00579e;
   color: #fff;
@@ -78,7 +78,7 @@ i {
   color: #fff;
 }
 
-.sidenav .logo img {
+.sidenav img {
   background: #fff !important;
   display: block !important;
   max-width: 170px;
