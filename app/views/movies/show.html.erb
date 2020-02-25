@@ -6,7 +6,7 @@
 <%= link_to "+ Add review for #{@movie.title}", new_review_path %>
 <br><br><br>
 </center><br>
-<h2>Reviews:</h2><br>
+<h2><%= @movie.title %> Reviews:</h2><br>
 
 <div>
 <% @movie.reviews.each do |review| %>
