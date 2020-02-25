@@ -1,0 +1,46 @@
+/* Style the navbar */
+.login {
+    background-color: transparent !important;
+    z-index: 2;
+    position: absolute;
+     top: 0;
+     right: 0;
+     
+  }
+  
+  
+  
+  /* Style the input field inside the navbar */
+  .login input {
+    border-radius: 3px;
+    padding: 13px;
+    margin-top: 8px !important;
+    margin: 4px;
+    font-size: 14px;
+    border: solid .5px rgba(192, 192, 192, 0.575);
+    width: 35%; /* adjust as needed (as long as it doesn't break the login) */
+  }
+  
+  /* Style the button inside the input container */
+  .login button {
+      margin-left: 5px;
+      border-radius: 70px;
+      box-shadow: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
+      padding: 8px 18px;
+      position: relative;
+      text-align: center;
+      white-space: nowrap;
+  }
+  
+  .login button:hover {
+    background: #7D7ABC;
+  }
+  
+  .login-form {
+    margin-left: -12%;
+  }
+  

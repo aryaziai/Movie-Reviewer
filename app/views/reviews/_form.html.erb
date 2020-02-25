@@ -1,0 +1,24 @@
+<% if !!flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+    <% end %>
+<% end %>
+
+<%@review.movie = @movie%>
+<%@review.user = @user%>
+
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :movie_id, :value => @review.movie.id %>
+  <%= f.hidden_field :user_id, :value => @review.user.id %>
+  <br>
+  <%= f.label :title%>
+  <%= f.text_field :title%>
+  <br><br>
+  <%= f.label :rating%>
+<input type="number" name="rating" min="1" max="5">
+  <br>
+  <%= f.text_area :content %><br>
+* Rating must be 1-5<br><br>
+  <%= f.submit  %>
+<% end %>
+

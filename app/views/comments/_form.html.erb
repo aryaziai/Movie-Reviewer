@@ -1,0 +1,17 @@
+<h2><%= "Leave a comment"%></h2>
+
+<% if !!flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+    <% end %>
+<% end %>
+
+    <%= form_for @comment do |f| %>
+        <%= f.hidden_field :review_id, :value => @review.id %>
+        <%= f.hidden_field :user_id, :value => @user.id %>
+        
+        <%= f.label " " %>
+        <%= f.text_area :content %>
+        <br><br>
+        <%= f.submit "Submit Comment" %>
+<% end %>

@@ -1,0 +1,38 @@
+<h1>Create User</h1><% if !!flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+    <% end %>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label "Username"%><font color="darkred"><%="*"%></font>
+  <%= f.text_field :username %>
+  <br><br>
+  <%= f.label "Password"%><font color="darkred"><%="*"%></font>
+  <%= f.password_field :password %>
+  <br><br>
+  <%= f.label "Password Confirmation"%><font color="darkred"><%="*"%></font>
+  <%= f.password_field :password_confirmation %>
+  <br><br>
+  <%= f.label "Display Name"%><font color="darkred"><%="*"%></font>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.label "Avatar URL"%>
+  <%= f.text_field :img_url%>
+  <br><br>
+  <%= f.label "Email"%><font color="darkred"><%="*"%></font>
+  <%= f.text_field :email %>
+  <br><br>
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+  <br><br>
+    <%= f.label :age %>
+<input type="number" name="age" min="13" max="110">
+  <br><br>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+  <br><br>
+  <%= f.submit "Create User"%>
+
+<% end %>
+

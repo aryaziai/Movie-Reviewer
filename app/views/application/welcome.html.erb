@@ -1,0 +1,21 @@
+<center>
+
+<% if logged_in? %>
+<h1>Welcome to MovieCritic, <%= current_user.name%>.</h1>
+<br><img src="https://media.giphy.com/media/13GIgrGdslD9oQ/giphy.gif"><br><br>
+<%else%>
+<h1>Welcome to MovieCritic!</h1><p>Please Log In or Create Account</p>
+<%= link_to "Create Account", '/signup' %><br>
+<%end%>
+
+
+<% if logged_in? %>
+<%= form_tag('/sessions', method: 'delete') do %>
+  <input type=submit value='Logout'><br>
+<%end%>
+<%else%><br>
+<%= form_tag('/sessions', method: 'post') do %>
+  <input type=submit value='Login'>
+<% end %>
+<%end%>
+</center>

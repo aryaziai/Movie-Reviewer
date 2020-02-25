@@ -1,0 +1,55 @@
+<h1><%=@movie.title%> Review</h1>
+<br>
+<div class="aligntitle"><h2><%= @review.title %></h2>
+<%if @review.rating == 5 %>
+<i class="fa fa-star fa-fw" aria-hidden="true"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i>
+<% elsif @review.rating == 4 %>
+<i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i>
+<% elsif @review.rating == 3 %>
+<i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i>
+<% elsif @review.rating == 2 %>
+<i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i><i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i>
+<% elsif @review.rating == 1 %>
+<i class="fa fa-star fa-fw" aria-hidden="true" color="darkdarkgoldenrod"></i>
+<% end %>
+</div><br>
+<div><%= @review.content %></div>
+
+<% if logged_in?%>
+<%@current_user = User.find(session[:user_id])%>
+<%end%>
+<% if logged_in? && @current_user == @review.user %>
+<br><div class="editlink"><%= link_to "Edit Review", edit_review_path %></div>
+<% end %>
+
+ <br><br>
+<div class="prof">
+<%= link_to user_path(@user) do %>
+<img src="<%= @user.img_url%>">
+<% end %>
+<p>&nbsp;&nbsp;&nbsp;<%= link_to @user.name, user_path(@user)%></p>
+</div>
+
+  <br><br><br><br><br><br>
+
+<% if logged_in?%>
+<%= render partial: 'comments/form' %>
+
+<%end%>
+<br><br>
+<h2><%= "Comments:"%></h2>
+<br>
+    <% if !@review.comments.empty?%>
+    <% @review.comments.each do |comment|%>
+    <div>
+    <%= comment.content%><br>
+    - <%= link_to comment.user.name, user_path(comment.user) %><%= " at #{comment.created_at.strftime("%I:%M %p on %m/%d/%Y")}"%></div>     
+    
+    <% end %>
+    <% else %>
+     There are currently no comments.
+    <% end %>
+<br>
+
+
+

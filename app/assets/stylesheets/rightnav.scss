@@ -1,0 +1,64 @@
+p.howdy {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+   .rightnav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #fff; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    border-left: 1px solid rgba(185, 184, 184, 0.548);
+    padding: 10px;
+    padding-left: 20px !important;
+    font-size: 86%;
+  }
+  
+  .rightnav a {
+    color: #980905 !important;
+}
+
+  .rightnav a:visited {
+    color: #666 !important;
+}
+
+
+  
+  /* The navigation menu links */
+  // .rightnav a {
+  //     border: none;
+  //     color: #202020;
+  //     padding: 16px 32px;
+  //     font-size: 16px;
+  //     margin: 4px 2px;
+  //     opacity: 1;
+  //     transition: 0.2s;
+  //     text-decoration: none;
+  //     font-family: 'Karla', sans-serif;
+  //     font-weight: bold;
+  //   text-transform: lowercase;
+  //   text-align: center;
+  //   display: block;
+  //   background-color: rgba(125, 122, 188, 0.308);
+  //     margin-top: 10px;
+  
+  // }
+  
+  // /* When you mouse over the navigation links, change their color */
+  // .rightnav a:hover { 
+  //     color: #202020;
+  //     background-color: rgba(125, 122, 188, 0.781);
+  // }
+  
+  
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .rightnav {padding-top: 15px;}
+    .rightnav a {font-size: 18px;}
+  }

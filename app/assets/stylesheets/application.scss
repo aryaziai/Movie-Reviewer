@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ @import "font-awesome";
+ 
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+ 
+ body {
+   background-color: #fdfdfd;
+   overflow-x: hidden;
+   margin: 0;
+   font-family: 'Karla', sans-serif;
+ }
+input {
+ min-width: 50px;
+}
+
+main input {
+  min-width: 50px;
+  border: 0px;
+  border-bottom: 1.5px solid #c7c7c7;
+  font-size: 90%;
+  padding-bottom: 3px;
+}
+
+main input[type="submit" i] {
+  text-decoration: none;
+  color: #00579e;
+  font-weight: 100;
+  border: 1px solid #00579e;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 86%;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+main input[type="submit" i]:hover{
+  background-color:#00579e;
+  color:#fff;
+}
+
+
+
+i {
+  color: grey;
+    font-size: 88%;
+}
+ .editlink {
+  padding-top: 10px;
+ }
+
+ .editlink a {
+  text-decoration: none;
+  color: #00579e;
+  font-weight: 100;
+  border: 1px solid #00579e;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+ }
+
+ .editlink a:hover{
+  background-color:#00579e;
+  color:#fff;
+}
+
+ .sidenav .logo img {
+  background: #fff !important;
+  display: block !important;
+  width: 170px;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+
+.sidenav .logo a {
+background:#fff !important;
+display: block !important;
+width: 20% !important;
+padding: 0px !important;
+margin: 14px 32px;
+
+}
+
+
+ * {
+   box-sizing: border-box;
+ }
+ 
+ 
+ 

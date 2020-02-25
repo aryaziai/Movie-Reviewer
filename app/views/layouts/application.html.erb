@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieCritic</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+​
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+​
+  <body>
+ <div class="sidenav">
+      <div class="logo">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+      </div>
+      <%= link_to root_path do %>
+      <i class="fa fa-home fa-fw" aria-hidden="true" ></i>&nbsp; Home
+      <% end %>
+      <%= link_to movies_path do %>
+      <i class="fa fa-film fa-fw" aria-hidden="true" ></i>&nbsp; Movies
+      <% end %>
+       <%= link_to reviews_path do %>
+      <i class="fa fa-book fa-fw" aria-hidden="true" ></i>&nbsp; Reviews
+      <% end %>
+      <%= link_to users_path do %>
+      <i class="fa fa-glass fa-fw" aria-hidden="true" ></i>&nbsp; Critics
+      <% end %>
+      
+      <% if logged_in? %>
+      <% @user = User.find(session[:user_id])%>
+      <%= link_to add_path do %>
+      <i class="fa fa-plus fa-fw" aria-hidden="true" ></i>&nbsp; Add Review
+      <% end %>
+      <%= link_to @user do %>
+      <i class="fa fa-user fa-fw" aria-hidden="true" ></i>&nbsp; Profile
+      <% end %>
+      <%= link_to "/sessions", method: 'delete' do %>
+      <i class="fa fa-sign-out fa-fw" aria-hidden="true" ></i> &nbsp; Sign Out
+      <% end %>
+            <% else %>
+      <%= link_to "/login" do %>
+      <i class="fa fa-user fa-fw" aria-hidden="true" ></i>&nbsp; Login
+       <% end %>
+       
+       <%= link_to "/signup" do %>
+      <i class="fa fa-address-card fa-fw" aria-hidden="true" ></i>&nbsp; Sign Up
+       <% end %>
+      
+    
+​
+      <%end%>
+    </div>
+​
+    <main>
+        <%= yield %>
+    </main>
+
+ 
+    <div class="rightnav">
+
+    <% if logged_in? %>
+      <% @user = User.find(session[:user_id])%>
+      <p class="howdy"><%="Howdy, #{@user.name} ㋡"%></p>
+    <% end %>
+
+    <h3><%= "Search Movies" %></h3>
+    <%= form_tag('/search', method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag("Search", :name =>nil)%>
+    <% end %>
+  
+​
+  <div>
+    <h3><%= "Recent Reviews" %></h3>
+​
+   
+    <% @reviews = Review.all.reverse.take(9) %>
+<% @reviews.each do |review| %>
+<% @user = review.user%>
+<% @movie = review.movie%>
+<%= link_to "#{review.title}", review_path(review)%><%=" By "%><%= link_to "#{review.user.name}", user_path(@user.id)%><br>
+<%=" On "%><%= link_to "#{review.movie.title}", movie_path(@movie)%><br><br>
+​
+<% end %> 
+</div>
+    </div>
+      
+​
+  </body>
+</html>

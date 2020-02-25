@@ -1,0 +1,11 @@
+<center><h1>Login</h1><% if !!flash[:errors] %>
+    <%= flash[:errors]%><br><br>
+    
+<% end %>
+
+<%= form_tag sessions_path do %> 
+    <%= text_field_tag :username, nil, placeholder: "Username" %><br><br>
+    <%= password_field_tag :password, nil, placeholder: "Password" %><br><br>
+    <br><%= submit_tag "Log In"%>
+<% end %>
+</center>

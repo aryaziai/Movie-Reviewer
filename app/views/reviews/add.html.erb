@@ -1,0 +1,24 @@
+<% if !!flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+    <% end %>
+<% end %>
+
+<div><H2><%="Select movie you would like to review"%></h2><br></div>
+<center>
+<%= form_for @review do |f| %>
+  <%= f.label :movie%>
+  <%= f.collection_select :movie_id, Movie.all, :id, :title %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <br><br>
+  <%= f.label :rating%>
+  <%= f.number_field :rating %>
+  <br><br>
+  <%= f.label "Review Title"%>
+  <%= f.text_field :title%>
+  <br><br>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.submit "Post Review"  %>
+<% end %>
+</center>

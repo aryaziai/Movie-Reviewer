@@ -1,0 +1,14 @@
+<center>
+
+<h1>All Reviews</h1>
+
+<div>
+<% @reviews.each do |review| %>
+<% @user = review.user%>
+<% @movie = review.movie%>
+<%= link_to "#{review.title}", review_path(review)%><%=" By "%><%= link_to "#{review.user.name}", user_path(@user.id)%><br>
+<%=" On "%><%= link_to "#{review.movie.title}", movie_path(@movie)%><br><br>
+
+<% end %> 
+</div>
+</center>

@@ -1,0 +1,11 @@
+<center><h1>2019 Best Movies</h1>
+      <div>
+        <% if !@movies.empty? %>
+            <% @movies.each do |movie| %>
+              <%= link_to movie.title, movie_path(movie) %><br><br>
+            <% end %>
+        <% else %>
+          <p>Sorry, no movies were found.</p>
+        <% end %>
+      </div>
+</center>

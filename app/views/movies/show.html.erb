@@ -1,0 +1,20 @@
+<center><h1><%= @movie.title %></h1>
+<b><label>Directed By: </label></b><%= @movie.director %><br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<p><%= @movie.description %></p>
+
+<%= link_to "+ Add review for #{@movie.title}", new_review_path %>
+<br><br><br>
+</center><br>
+<h2>Reviews:</h2><br>
+
+<div>
+<% @movie.reviews.each do |review| %>
+<% @user = review.user%>
+<% @movie = review.movie%>
+<%= link_to "#{review.title}", review_path(review)%><%=" By "%><%= link_to "#{review.user.name}", user_path(@user.id)%><br><br>
+<% end %> 
+</div>
+<br><br><br>
+
+
