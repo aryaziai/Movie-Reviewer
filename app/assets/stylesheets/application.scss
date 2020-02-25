@@ -14,21 +14,20 @@
  *= require_self
  */
 
+@import "font-awesome";
 
- @import "font-awesome";
- 
- @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
- @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
- @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
- 
- body {
-   background-color: #fdfdfd;
-   overflow-x: hidden;
-   margin: 0;
-   font-family: 'Karla', sans-serif;
- }
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
+
+body {
+  background-color: #fdfdfd;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "Karla", sans-serif;
+}
 input {
- min-width: 50px;
+  min-width: 50px;
 }
 
 main input {
@@ -51,22 +50,20 @@ main input[type="submit" i] {
   padding-right: 25px !important;
 }
 
-main input[type="submit" i]:hover{
-  background-color:#00579e;
-  color:#fff;
+main input[type="submit" i]:hover {
+  background-color: #00579e;
+  color: #fff;
 }
-
-
 
 i {
   color: grey;
-    font-size: 88%;
+  font-size: 88%;
 }
- .editlink {
+.editlink {
   padding-top: 10px;
- }
+}
 
- .editlink a {
+.editlink a {
   text-decoration: none;
   color: #00579e;
   font-weight: 100;
@@ -74,37 +71,31 @@ i {
   padding: 10px;
   border-radius: 4px;
   font-size: 16px;
- }
-
- .editlink a:hover{
-  background-color:#00579e;
-  color:#fff;
 }
 
- .sidenav .logo img {
+.editlink a:hover {
+  background-color: #00579e;
+  color: #fff;
+}
+
+.sidenav .logo img {
   background: #fff !important;
   display: block !important;
-  width: 170px;
+  max-width: 170px;
 }
 
 .field_with_errors {
   display: inline;
 }
 
-
 .sidenav .logo a {
-background:#fff !important;
-display: block !important;
-width: 20% !important;
-padding: 0px !important;
-margin: 14px 32px;
-
+  background: #fff !important;
+  display: block !important;
+  width: 20% !important;
+  padding: 0px !important;
+  margin: 14px 32px;
 }
 
-
- * {
-   box-sizing: border-box;
- }
- 
- 
- 
+* {
+  box-sizing: border-box;
+}
