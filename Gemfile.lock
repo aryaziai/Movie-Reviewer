@@ -75,6 +75,8 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    ddtrace (0.33.1)
+      msgpack
     erubi (1.9.0)
     faker (2.10.2)
       i18n (>= 1.6, < 2)
@@ -209,6 +211,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  ddtrace
   faker
   font-awesome-rails
   jbuilder (~> 2.7)
