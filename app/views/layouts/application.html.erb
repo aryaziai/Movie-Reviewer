@@ -64,7 +64,9 @@
 
     <% if logged_in? %>
       <% @user = User.find(session[:user_id])%>
-      <p class="howdy"><%="Howdy, #{@user.name} ㋡"%></p>
+      <p class="howdy"><%="Howdy,"%></p>
+          <%= link_to "#{@user.name}", user_path(@user)%>
+          <%="㋡"%></p>
     <% end %>
 
     <h3><%= "Search Movies" %></h3>

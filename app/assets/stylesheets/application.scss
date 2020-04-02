@@ -30,6 +30,14 @@ input {
   min-width: 51px;
 }
 
+.center {
+  text-align: center;
+}
+
+* {
+  outline: none;
+}
+
 main input {
   min-width: 50px;
   border: 0px;

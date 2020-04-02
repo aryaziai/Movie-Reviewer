@@ -21,7 +21,7 @@
 <% if logged_in? && @current_user == @user %>
 &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Edit Profile", edit_user_path(@user)%>
 <%end%>
-<br><br>
+<br><br><br>
 <h2><%= "#{@user.name}'s Reviews:"%></h2>
 <br>
 <% @user.reviews.each do |r| %>

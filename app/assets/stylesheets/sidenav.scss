@@ -1,65 +1,59 @@
 /* The sidebar menu */
 
 .bottomleft {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    font-size: 18px;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #fff; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  border-right: 1px solid rgba(185, 184, 184, 0.548);
+  color: #202020;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  border: none;
+  color: #202020;
+  padding: 16px 32px;
+  font-size: 19px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.2s;
+  text-decoration: none;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: flex;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #000;
+  background-color: #00a2ff78;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 0px;
+  }
+  .sidenav a {
     font-size: 18px;
   }
-  
-  
-   .sidenav {
-      height: 100%; /* Full-height: remove this if you want "auto" height */
-      width: 20%; /* Set the width of the sidebar */
-      position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-      z-index: 1; /* Stay on top */
-      top: 0; /* Stay at the top */
-      left: 0;
-      background-color: #fff; /* Black */
-      overflow-x: hidden; /* Disable horizontal scroll */
-      padding-top: 20px;
-      border-right: 1px solid rgba(185, 184, 184, 0.548);
-      color: #202020;
-    }
-    
-    
-    /* The navigation menu links */
-    .sidenav a {
-        border: none;
-        color: #202020;
-        padding: 16px 32px;
-        font-size: 20px;
-        margin: 4px 2px;
-        opacity: 1;
-        transition: 0.2s;
-        text-decoration: none;
-        font-family: 'Karla', sans-serif;
-        font-weight: bold;
-      text-transform: capitalize;
-      display: flex;
-      
-  
-    
-    }
- 
-  
-  
-  
-    /* When you mouse over the navigation links, change their color */
-    .sidenav a:hover { 
-        color: #000;
-        background-color:#00a2ff78;
-    }
-    
-    
-    
-    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 0px;}
-      .sidenav a {font-size: 18px;}
-    }
+}
